@@ -33,7 +33,7 @@ function addAmbientLight(){
 
 function addSpotLight(){
   const spotLight = new THREE.SpotLight(0xffffff);
-  spotLight.position.set(0, 60, 0);
+  spotLight.position.set(-20, 30, 0);
   spotLight.intensity = 2.0;
   spotLight.castShadow = true;
   spotLight.shadow.mapSize.width = 2000;
@@ -100,10 +100,7 @@ function makeComplex(){
 }
 
 function createMesh(geom) {
-  const texture = new THREE.TextureLoader().load("./brick.jpg");
-
   const meshMaterial = new THREE.MeshLambertMaterial(
-    { color: 0x2194CE }
     );
   meshMaterial.side = THREE.DoubleSide;
   meshMaterial.wireframe = false;
@@ -126,9 +123,9 @@ function redrawResult() {
 }
 
 function render() {
-  result.rotation.x += 0.005;
+//  result.rotation.x += 0.005;
   result.rotation.y += 0.005;
-  result.rotation.z -= 0.005;
+//  result.rotation.z -= 0.005;
 
   requestAnimationFrame(render);
   webGLRenderer.render(scene, camera);
